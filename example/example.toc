@@ -1,2 +1,0 @@
-\beamer@sectionintoc {1}{Project}{3}{0}{1}
-\beamer@sectionintoc {2}{Our Contribution}{8}{0}{2}

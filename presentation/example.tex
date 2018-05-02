@@ -1,5 +1,5 @@
 \documentclass{beamer}
-
+\usepackage{listings}             
 \usetheme{Padova}
 
 
@@ -70,7 +70,7 @@
 	\begin{frame}{Our Contribution}
 
 	
-	We have:
+	We have:\\
 	\begin{enumerate}
 		\item Implemented the Integer Interval Domain
 		\item Implemented Bounded Box Domain specializing the previous domain, because abstract operators of both domains are very similar
@@ -82,12 +82,12 @@
 		Abstract \textbf{sum} operator algorithm in Bounded Box Domain. 
 		\begin{enumerate}
 			\item Execute sum operator of Interval Domain. \\
-			$[a,b] +^\# [c,d] = [a + c,b + d] = [e,f]$
+			$[a,b] +_{b}^\# [c,d] = [a + c,b + d] = [e,f]$
 			\item $[e,f]$ must be represented as an element of Bounded Box Domain
 		\end{enumerate}
 	\[ [e,f] =
 	\begin{cases} 
-	\top & e \textless m \land f \textgreater n\\
+	\top^\# & e \textless m \land f \textgreater n\\
 	[n,+\infty) & e \geq n  \land  e \neq f\\
 	[e,+\infty) & e \textless n \land f \textgreater n\\
 	(-\infty,m] & f \leq m \land e \neq f\\
@@ -97,19 +97,42 @@
 	\]
 		
 	\end{frame}
+	\begin{frame}{Our Contribution}
+		\begin{block}{Abstract \textbf{reminder} operator algorithm in Box Domain}
+		\scriptsize	
+		\[ [a,b] \%_{b}^\# [c,d] =
+		\begin{cases}
+		\top^\# & [c,d] = \top^\# \\
+		\bot^\# & [a,b] = \bot^\# \lor [c,d] = \bot^\# \lor [c,d] = [0,0] \\ 
+		[0,0] & [a,b] = [0,0] \\
+		[0,d-1] & c \geq 0\\
+		[c+1,0] & d \leq 0 \\
+		[c+1,d-1] & otherwise
+		\end{cases}
+		\]
+		\normalsize
+	\end{block}
+	
+	\end{frame}
 
-	\begin{frame}{Our contribution}
-		\begin{block}{Normal block}
-			Fusce luctus venenatis felis quis semper
-		\end{block}
+	\begin{frame}{Our contibution}
+		We have defined a new type, called \large\textit{InfInt}\normalsize, to:\\
+		\begin{enumerate}
+			\item model infinity values with Integer type
+			\item overload operations between integer number
+			\item simplify further contribution
+		\end{enumerate}
 
-		\begin{alertblock}{Alert block}
-			$$ E = (x_1 \vee \neg x_2 \vee \neg x_3) \wedge (x_1 \vee x_2 \vee x_4) $$
-		\end{alertblock}
+	\begin{block}{Example}
+		$(+\infty) + n = +\infty$\\
+		$(+\infty) \times (-\infty) = -\infty$  \\
+		$(+\infty) \div (+\infty) = 0$
+	\end{block}
+	\end{frame}
 
-		\begin{exampleblock}{Example block}
-			Proin tincidunt, neque at tincidunt mollis
-		\end{exampleblock}
+	\section{Example}
+	\begin{frame}{First Example}
+		
 	\end{frame}
 
 

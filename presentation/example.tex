@@ -50,7 +50,7 @@
 
 	\begin{frame}{Project - Jandom}
 		\begin{itemize}
-			\item Static Analyzer for \textbf{Numerical} and Object Domains (forse togliere object)
+			\item Static Analyzer for \textbf{Numerical} Domains
 			\item Jandom was created at the University of Chieti-Pescara
 			\item It's a buildup of \textbf{RANDOM}, which analyzes \textbf{R} code
 			\item Jandon is written in \textbf{Scala}
@@ -133,17 +133,40 @@
 
 	\section{Example}
 	
-		\begin{frame}{First example}
-		
-		\begin{flalign}
-			\includegraphics[scale=0.25]{images/firstcode.png}
-		\end{flalign}
 	
-		\end{frame}
+		\begin{frame}{First Example}
+		\begin{flalign}
+					\includegraphics[scale=0.65]{images/secondcode1.png}
+		\end{flalign}
+	\end{frame}
 
-	\section{Improvements that could be made}
 	\begin{frame}
+		\includegraphics[scale=0.29]{images/secondcode2.png}
+	\end{frame}
 
+	\begin{frame}{Second Example}
+
+	\begin{flalign}
+		\includegraphics[scale=0.65]{images/thirdcode1.png}
+	\end{flalign}
+	
+	\end{frame}
+	
+	\begin{frame}
+	\includegraphics[scale=0.30]{images/thirdcode2.png}
+	\end{frame}
+
+
+	\begin{frame}{Nota Bene}
+		Jandom implements \textbf{subtraction} with the following steps:\\
+		\begin{enumerate}
+			\item Perform \textbf{Inverse} operator on the second operating
+			\item Perfom \textbf{Add} operator\\
+		\end{enumerate}
+		So, when $m \neq -n$ the following will happen:
+			\begin{exampleblock}{Example with $m = 0, n = 10$}
+				$[4,5] -^\# [2,3]$ is computed as $[4,5] +^\# (-\infty,0] = (-\infty,5]$ \\instead of $[1,3]$, that would be the best possibile approximation
+			\end{exampleblock}
 	\end{frame}
 
 \end{document}

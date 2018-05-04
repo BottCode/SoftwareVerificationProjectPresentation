@@ -15,9 +15,16 @@
 
 	\maketitle
 
-	\begin{frame}{Outline}
-		\tableofcontents
-	\end{frame}
+		\begin{frame}{Outline}
+	\Large
+	\begin{enumerate}
+		\item \textbf{\underline{Project}} \\~\\
+		\item Our Contribution \\~\\
+		\item Example
+		
+	\end{enumerate}
+\end{frame}
+\normalsize
 
 
 	\section{Project}
@@ -27,8 +34,9 @@
 
 		 \scriptsize Given $m, n \in \mathbb{Z} \cup \{-\infty,+\infty\}$, then
 	 \normalsize
-
+	\begin{flalign*}
 	  \includegraphics[scale=0.40]{images/consegna.png}
+	\end{flalign*}
 	  	
 
 	\end{frame}
@@ -67,15 +75,25 @@
 
 
 	\section{Our Contribution}
-	
+	\begin{frame}{Outline}
+\Large
+		\begin{enumerate}
+			\item Project \\~\\
+			\item \textbf{\underline{Our Contribution}} \\~\\
+			\item Example
+
+		\end{enumerate}
+	\end{frame}
+\normalsize
 	\begin{frame}{Our Contribution}
 
-	
 	We have:\\
 	\begin{enumerate}
 		\item Implemented the Integer Interval Domain
 		\item Implemented Bounded Box Domain specializing the previous domain, because abstract operators of both domains are very similar
 	\end{enumerate}
+\centering
+		\includegraphics[scale=0.4]{images/gerarchia.jpg}\\
 	
 	\end{frame}
 
@@ -99,7 +117,8 @@
 		
 	\end{frame}
 	\begin{frame}{Our Contribution}
-		\begin{block}{Abstract \textbf{reminder} operator algorithm in Box Domain}
+	Abstract \textbf{reminder} operator algorithm in Box Domain
+		\begin{block}{Definition}
 		\scriptsize	
 		\[ [a,b] \%_{b}^\# [c,d] =
 		\begin{cases}
@@ -123,14 +142,22 @@
 			\item overload operations between integer number
 			\item simplify further contribution
 		\end{enumerate}
-
+	
 	\begin{block}{Example}
 		$(+\infty) + n = +\infty$\\
 		$(+\infty) \times (-\infty) = -\infty$  \\
 		$(+\infty) \div (+\infty) = 0$
 	\end{block}
 	\end{frame}
-
+\begin{frame}{Outline}
+\Large
+\begin{enumerate}
+	\item Project \\~\\
+	\item Our Contibution \\~\\
+	\item \textbf{\underline{Example}}
+\end{enumerate}
+\normalsize
+\end{frame}
 	\section{Example}
 	
 	
@@ -141,7 +168,7 @@
 	\end{frame}
 
 	\begin{frame}
-		\includegraphics[scale=0.29]{images/secondcode2.png}
+		\includegraphics[scale=0.37]{images/secondcode2.png}
 	\end{frame}
 
 	\begin{frame}{Second Example}
@@ -153,14 +180,14 @@
 	\end{frame}
 	
 	\begin{frame}
-	\includegraphics[scale=0.30]{images/thirdcode2.png}
+	\includegraphics[scale=0.4]{images/thirdcode2.png}
 	\end{frame}
 
 
 	\begin{frame}{Nota Bene}
 		Jandom implements \textbf{subtraction} with the following steps:\\
 		\begin{enumerate}
-			\item Perform \textbf{Inverse} operator on the second operating
+			\item Perform \textbf{Inverse} operator on the second operand
 			\item Perfom \textbf{Add} operator\\
 		\end{enumerate}
 		So, when $m \neq -n$ the following will happen:

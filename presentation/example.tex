@@ -30,19 +30,19 @@
 	\section{Project}
 
 	\begin{frame}{Project - Domain}
-	We have chosen the \textbf{Bounded Box Domain}, which is a parametric restriction of the interval abstract domain $Int$:\\~\\~\\
+	We have chosen the \textbf{Bounded Box Domain}, which is a parametric restriction of the interval abstract domain $Int$:\\~\\
 
-		 \scriptsize Given $m, n \in \mathbb{Z} \cup \{-\infty,+\infty\}$, then
-	 \normalsize
+		  Given $m, n \in \mathbb{Z} \cup \{-\infty,+\infty\}$, then
+	 
 	\begin{flalign*}
-	  \includegraphics[scale=0.40]{images/consegna.png}
+	  \includegraphics[scale=0.14]{images/consegna.png}
 	\end{flalign*}
 	  	
 
 	\end{frame}
 	\begin{frame}{Project - Domain}
 		\begin{figure}
-			Bounded Box with m = -2, n = 2
+			Bounded Box with \textbf{m = -2}, \textbf{n = 2}
 			\includegraphics[scale=0.6]{images/box.png}
 		\end{figure}
 
@@ -50,20 +50,21 @@
 
 	\begin{frame}{Project - Domain}
 		\begin{figure}
-			Bounded Box with m $>$ n
+			Bounded Box with \textbf{m $>$ n}
 	\includegraphics[scale=0.8]{images/constant.jpg}
 \end{figure}
 
 \end{frame}
 
 	\begin{frame}{Project - Jandom}
-		\begin{itemize}
-			\item Static Analyzer for \textbf{Numerical} Domains
-			\item Jandom was created at the University of Chieti-Pescara
-			\item It's a buildup of \textbf{RANDOM}, which analyzes \textbf{R} code
-			\item Jandon is written in \textbf{Scala}
-			\item Jandom analyzes JVM bytecode using \textbf{Soot}
-		\end{itemize}
+	What is \textbf{Jandom}?\\~\\
+		\begin{enumerate}
+			\item Static Analyzer for \textbf{Numerical} Domains\\~\\
+			\item It was created at the University of Chieti-Pescara\\~\\
+			\item It's a buildup of \textbf{RANDOM}, which analyzes \textbf{R} code\\~\\
+			\item It analyzes JVM bytecode using \textbf{Soot}\\~\\
+			\item It is written in \textbf{Scala}\\~\\
+		\end{enumerate}
 	\end{frame}
 
 	\begin{frame}{Project - Jandom}
@@ -72,6 +73,19 @@
 			\includegraphics[scale=0.4]{images/repo.jpg}
 		\end{figure}
 	\end{frame}
+
+	\begin{frame}{Project - Architecture}
+	
+	In order to create a new domain \textbf{X}, you have to implement the following classes:\\~\\
+	\begin{enumerate}
+		\item  \textbf{XElement}: \textit{sealed trait} used to represent an element of the domain. \\~\\
+		\item \textbf{XDomainCore}: \textit{class} which implements abstract operators. \\~\\
+		\item \textbf{XDomain}: \textit{class} which represents the domain.
+	\end{enumerate}
+	
+	
+	
+\end{frame}
 
 
 	\section{Our Contribution}
@@ -87,20 +101,20 @@
 \normalsize
 	\begin{frame}{Our Contribution}
 
-	We have:\\
+	We have:\\~\\
 	\begin{enumerate}
-		\item Implemented the Integer Interval Domain
+		\item Implemented the Integer Interval Domain\\~\\
 		\item Implemented Bounded Box Domain specializing the previous domain, because abstract operators of both domains are very similar
 	\end{enumerate}
 \centering
-		\includegraphics[scale=0.4]{images/gerarchia.jpg}\\
+		\includegraphics[scale=0.47]{images/gerarchia.jpg}\\
 	
 	\end{frame}
 
 	\begin{frame}{Our Contribution}
-		Abstract \textbf{sum} operator algorithm in Bounded Box Domain. 
+		Abstract \textbf{sum} operator algorithm in Bounded Box Domain.
 		\begin{enumerate}
-			\item Execute sum operator of Interval Domain. \\
+			\item Execute sum operator of Interval Domain. 
 			$[a,b] +_{b}^\# [c,d] = [a + c,b + d] = [e,f]$
 			\item $[e,f]$ must be represented as an element of Bounded Box Domain
 		\end{enumerate}
@@ -117,7 +131,7 @@
 		
 	\end{frame}
 	\begin{frame}{Our Contribution}
-	Abstract \textbf{reminder} operator algorithm in Box Domain
+	Abstract \textbf{reminder} operator algorithm in Box Domain\\~\\
 		\begin{block}{Definition}
 		\scriptsize	
 		\[ [a,b] \%_{b}^\# [c,d] =
@@ -135,19 +149,20 @@
 	
 	\end{frame}
 
-	\begin{frame}{Our contribution}
+
+	\begin{frame}{Our Contribution}
 		We have defined a new type, called \large\textit{InfInt}\normalsize, to:\\
 		\begin{enumerate}
-			\item model infinity values with Integer type
-			\item overload operations between integer number
-			\item simplify further contribution
+			\item Model infinity values with Integer type
+			\item Overload operations between integer number
+			\item Simplify further contribution\\~\\
 		\end{enumerate}
 	
-	\begin{block}{Example}
+	\begin{exampleblock}{Example}
 		$(+\infty) + n = +\infty$\\
 		$(+\infty) \times (-\infty) = -\infty$  \\
 		$(+\infty) \div (+\infty) = 0$
-	\end{block}
+	\end{exampleblock}
 	\end{frame}
 \begin{frame}{Outline}
 \Large
@@ -160,8 +175,9 @@
 \end{frame}
 	\section{Example}
 	
-	
+		
 		\begin{frame}{First Example}
+		Let's suppose \textbf{m = -10}, \textbf{n = 10}
 		\begin{flalign}
 					\includegraphics[scale=0.65]{images/secondcode1.png}
 		\end{flalign}
@@ -172,7 +188,7 @@
 	\end{frame}
 
 	\begin{frame}{Second Example}
-
+		Let's suppose \textbf{m = -10}, \textbf{n = 10}
 	\begin{flalign}
 		\includegraphics[scale=0.65]{images/thirdcode1.png}
 	\end{flalign}
@@ -185,15 +201,19 @@
 
 
 	\begin{frame}{Nota Bene}
-		Jandom implements \textbf{subtraction} with the following steps:\\
+		Jandom implements \textbf{subtraction} with the following steps:
 		\begin{enumerate}
 			\item Perform \textbf{Inverse} operator on the second operand
-			\item Perfom \textbf{Add} operator\\
+			\item Perfom \textbf{Add} operator\\~\\
 		\end{enumerate}
-		So, when $m \neq -n$ the following will happen:
+		So, when \textbf{m $\neq$ -n} the following will happen:
 			\begin{exampleblock}{Example with $m = 0, n = 10$}
 				$[4,5] -^\# [2,3]$ is computed as $[4,5] +^\# (-\infty,0] = (-\infty,5]$ \\instead of $[1,3]$, that would be the best possibile approximation
 			\end{exampleblock}
+	\end{frame}
+
+	\begin{frame}{ § }
+
 	\end{frame}
 
 \end{document}
